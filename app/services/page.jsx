@@ -6,30 +6,30 @@ import Link from "next/link";
 const services = [
   {
     num: "01",
-    title: "Web Development",
+    title: "Full Stack Development",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+      "Experience with many javascript frameworks and backend frameworks such as flask, node, alongside use of NoSQL and SQL databases",
     href: "",
   },
   {
     num: "02",
-    title: "UI/UX Design",
+    title: "Automation and Analytics",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+      "Proficiency in Automating certain tasks as well as automating data collection and analysis. Experience backtesting several trading strategies.",
     href: "",
   },
   {
     num: "03",
-    title: "Logo Design",
+    title: "Mobile Application Development",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+      "Experience with Platforms such as Android Studio and React Native. Worked to incorporate responsive design and performance optimization in corporate settings",
     href: "",
   },
   {
     num: "04",
-    title: "SEO",
+    title: "Machine Learning",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+      "I have experience in developing and deploying machine learning models for tasks like classification, regression, and optimization. I've worked with supervised and unsupervised learning techniques, fine-tuning algorithms to improve accuracy. My projects include automating decision-making processes and integrating machine learning into applications for predictive insights.",
     href: "",
   },
 ];

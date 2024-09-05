@@ -23,33 +23,45 @@ const projects = [
   {
     num: "01",
     category: "frontend",
-    title: "project 1",
+    title: "LazyTrader",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
-    image: "/assets/work/thumb1.png",
+      "TradingBot/Platform that allows me to backtest certain forex trading strateges. Backtested strategies such as mean reversion, rgression, and classification techniques to optimize trading strategies. Built REST APIs for front-end back-end communication. Automated all trading processes and deployed on AWS EC2 Instance. Utilized Flask server for backend",
+    stack: [{ name: "Python(Pandas, Numpy, etc)" }, { name: "Flask" }, { name: "AWS" }],
+    image: "/assets/TradingBotPics/tradingPics.png",
     live: "",
-    github: "",
+    github: "https://github.com/pranavKomarla",
   },
   {
     num: "02",
     category: "fullstack",
-    title: "project 2",
+    title: "THIS :)",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
-    image: "/assets/work/thumb2.png",
+      "Simple Portfolio Website utilizing javascript frameworks in order to showcase some ability. Utilized FramerMotion and TailwindCSS. Deployed on Vercel ",
+    stack: [{ name: "NextJS" }, { name: "ReactJS" }, { name: "Vercel" }, { name: "TailWindCSS"}],
+    image: "/assets/PortfolioPics/homescreen.png",
     live: "",
     github: "",
   },
   {
     num: "03",
     category: "frontend",
-    title: "project 3",
+    title: "RU Study",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
+      "Using React.js and HTML/CSS on the frontend, I created a website that would allow college students to create study groups with other on the basis of time availability and location. Utilized Firebase User Authentication for the purpose of storing this information",
     stack: [{ name: "Next.js" }, { name: "Tailwind.css" }],
-    image: "/assets/work/thumb3.png",
+    image: "/assets/RUStudy/rutgers.png",
+    live: "",
+    github: "",
+  },
+  
+  {
+    num: "04",
+    category: "frontend",
+    title: "Linux Shell",
+    description:
+      "Designed and implemented a custom Linux shell, providing interactive and batch modes for executing and managing a sequence of shell commands. Gained expertise in POSIX stream IO, directory management, and advanced process control. Utilized system calls for implementing redirection and piping between processes, enhancing command functionality. Developed features including wildcard pattern matching, input/output redirection, and conditional command execution, ensuring robust and efficient shell operations",
+    stack: [{ name: "C" }],
+    image: "/assets/Linux_shell_pics/Linux_Shell.png",
     live: "",
     github: "",
   },
@@ -72,7 +84,7 @@ const Work = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+        transition: { delay: 0.7, duration: 0.4, ease: "easeIn" },
       }}
       className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
     >
@@ -81,12 +93,12 @@ const Work = () => {
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-[30px] h-[50%]">
               {/* outline num */}
-              <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
+              <div className="text-8xl leading-none font-extrabold text-transparent text-outline text-white">
                 {project.num}
               </div>
               {/* project category */}
               <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category} project
+                {project.title} 
               </h2>
               {/* project description */}
               <p className="text-white/60">{project.description}</p>
@@ -95,6 +107,7 @@ const Work = () => {
                 {project.stack.map((item, index) => {
                   return (
                     <li key={index} className="text-xl text-accent">
+                      
                       {item.name}
                       {/* remove the last comma */}
                       {index !== project.stack.length - 1 && ","}
@@ -108,7 +121,7 @@ const Work = () => {
               <div className="flex items-center gap-4">
                 {/* live project button */}
                 <Link href={project.live}>
-                  <TooltipProvider delayDuration={100}>
+                  {/* <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
                         <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
@@ -117,7 +130,7 @@ const Work = () => {
                         <p>Live project</p>
                       </TooltipContent>
                     </Tooltip>
-                  </TooltipProvider>
+                  </TooltipProvider> */}
                 </Link>
                 {/* github project button */}
                 <Link href={project.github}>

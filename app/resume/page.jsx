@@ -7,48 +7,38 @@ import {
   FaReact,
   FaFigma,
   FaNodeJs,
+  FaFlask,
+  FaPython
 } from "react-icons/fa";
 
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+
+import { SiTailwindcss, SiNextdotjs, SiFlask } from "react-icons/si";
 
 // about data
 const about = {
   title: "About me",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "Hello! My name is Pranav Komarla and I am currently a Rutgers University student studying computer science. My goal is to overall increase my fundamental knowledge of the subjects and understand how to apply such knowledge into the real world. I believe that computer science exists in ultimately every industry, and in order to achieve my goal, I am currently seeking internships that would promote the variability of my skillset with regards to computer science.",
   info: [
     {
       fieldName: "Name",
-      fieldValue: "Luke Coleman",
+      fieldValue: "Pranav Komarla",
     },
     {
       fieldName: "Phone",
-      fieldValue: "(+40) 321 654 678",
+      fieldValue: "908-705-2991",
     },
     {
       fieldName: "Experience",
       fieldValue: "12+ Years",
     },
-    {
-      fieldName: "Skype",
-      fieldValue: "luke.01",
-    },
-    {
-      fieldName: "Nationality",
-      fieldValue: "American",
-    },
+    
+    
     {
       fieldName: "Email",
-      fieldValue: "luke.01@gmail.com",
+      fieldValue: "pranavkv03@gmail.com",
     },
-    {
-      fieldName: "Freelance",
-      fieldValue: "Available",
-    },
-    {
-      fieldName: "Languages",
-      fieldValue: "English, Spanish",
-    },
+    
   ],
 };
 
@@ -57,38 +47,21 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My experience",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "",
   items: [
     {
-      company: "Tech Solutions Inc.",
-      position: "Full Stack Developer",
-      duration: "2022 - Present",
+      company: "Avis Budget Group",
+      position: "Software Developer Intern",
+      duration: "Summer 2024",
+      
     },
     {
-      company: "Web Design Studio",
-      position: "Front-End Developer Intern",
-      duration: "Summer 2021",
+      company: "RafterOne",
+      position: "Salesforce Intern",
+      duration: "Summer 2023",
+      description: "",
     },
-    {
-      company: "E-commerce Startup",
-      position: "Freelance Web Developer",
-      duration: "2020 - 2021",
-    },
-    {
-      company: "Tech Academy",
-      position: "Teaching Assistant",
-      duration: "2019 - 2020",
-    },
-    {
-      company: "Digital Agency",
-      position: "UI/UX Designer",
-      duration: "2018 - 2019",
-    },
-    {
-      company: "Software Development Firm",
-      position: "Junior Developer",
-      duration: "2017 - 2018",
-    },
+    
   ],
 };
 
@@ -97,38 +70,15 @@ const education = {
   icon: "/assets/resume/cap.svg",
   title: "My education",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "",
   items: [
     {
-      institution: "Online Course Platform",
-      degree: "Full Stack Web Development Bootcamp",
-      duration: "2023",
+      institution: "Rutgers University",
+      degree: "BS: Computer Science/Data Science",
+      duration: "2022-2025",
     },
-    {
-      institution: "Codecademy",
-      degree: "Front-end Track",
-      duration: "2022",
-    },
-    {
-      institution: "Online Course",
-      degree: "Programming Course",
-      duration: "2020 - 2021",
-    },
-    {
-      institution: "Tech Institute",
-      degree: "Certified Web Developer",
-      duration: "2019",
-    },
-    {
-      institution: "Design School",
-      degree: "Diploma in Graphic Design",
-      duration: "2016 - 2018",
-    },
-    {
-      institution: "Community College",
-      degree: "Associate Degree in Computer Science",
-      duration: "2014 - 2016",
-    },
+    
+      
   ],
 };
 
@@ -136,15 +86,15 @@ const education = {
 const skills = {
   title: "My skills",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "",
   skillList: [
     {
       icon: <FaHtml5 />,
       name: "html 5",
     },
     {
-      icon: <FaCss3 />,
-      name: "css 3",
+      icon: <FaPython />,
+      name: "Python",
     },
     {
       icon: <FaJs />,
@@ -167,8 +117,8 @@ const skills = {
       name: "node.js",
     },
     {
-      icon: <FaFigma />,
-      name: "figma",
+      icon: <SiFlask />,
+      name: "flask",
     },
   ],
 };
@@ -232,6 +182,9 @@ const Resume = () => {
                             {/* dot */}
                             <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
                             <p className="text-white/60">{item.company}</p>
+                          </div>
+                          <div>
+                            <p>{item.description}</p>
                           </div>
                         </li>
                       );
