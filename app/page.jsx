@@ -49,7 +49,7 @@ const Home = () => {
               Software Developer
             </span>
             <h1 className = "h1">Hello I'm <br /> <span className = "text-accent">Pranav Komarla</span></h1>
-            <p className = "max-w-[500px] mb-9 text-white/80">I excel at crafting elegant digital experiences and I am proficient in various programming languages and technologies. </p>
+            <p className = "max-w-[500px] mb-9 text-white/80"> I truly enjoy the art of programming and development and am currently studying both computer science and data science. I will surely be pursuing excellence in these fields and am looking for opportunities. </p>
             <div className = "flex flex-col xl:flex-row items-center gap-8">
             
             <a download href = "/assets/Resume.pdf">
