@@ -13,6 +13,7 @@ import {
 
 
 import { SiTailwindcss, SiNextdotjs, SiFlask } from "react-icons/si";
+import { Button } from "@/components/ui/button";
 
 // about data
 const about = {
@@ -28,10 +29,10 @@ const about = {
       fieldName: "Phone",
       fieldValue: "908-705-2991",
     },
-    {
-      fieldName: "Experience",
-      fieldValue: "12+ Years",
-    },
+    // {
+    //   fieldName: "Experience",
+    //   fieldValue: "12+ Years",
+    // },
     
     
     {
@@ -76,6 +77,13 @@ const education = {
       institution: "Rutgers University",
       degree: "BS: Computer Science/Data Science",
       duration: "2022-2025",
+      hasTranscript: true,
+    },
+    {
+      institution: "Coursera",
+      degree: "Deep Learning Specialization",
+      duration: "2024",
+      hasTranscript: false,
     },
     
       
@@ -186,6 +194,7 @@ const Resume = () => {
                           <div>
                             <p>{item.description}</p>
                           </div>
+                          
                         </li>
                       );
                     })}
@@ -210,13 +219,20 @@ const Resume = () => {
                           className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                         >
                           <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                          <h3 className={`text-xl max-w-[260px] min-h-[60px] text-center lg:text-left ${item.degree === "" && "hidden"}` }>
                             {item.degree}
                           </h3>
                           <div className="flex items-center gap-3">
                             {/* dot */}
                             <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
                             <p className="text-white/60">{item.institution}</p>
+                          </div>
+                          <div>
+                            <a download href = "/assets/transcript.pdf ">
+                            <Button className = {`h-[23px] ${!item.hasTranscript && "hidden"}`}>
+                              Download Transcript
+                            </Button>
+                            </a>
                           </div>
                         </li>
                       );
