@@ -3,7 +3,9 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-
+import { useState } from "react";
+import {ChakraProvider, FormControl, FormLabel, extendTheme, FormErrorMessage} from '@chakra-ui/react'
+import { sendContactForm } from "@/lib/api";
 
 import {
   Select,
@@ -35,9 +37,55 @@ const info = [
   },
 ];
 
+const initValues = {
+  firstname: "",
+  lastname: "",
+  email: "",
+  subject: "",
+  message: "",
+ 
+ 
+ }
+ const initBools = {
+  firstname: false,
+  lastname: false,
+  email: false,
+  subject: false,
+  message: false,
+ }
+
+ const initState = {values: initValues}
+ 
+
 import { motion } from "framer-motion";
 
 const Contact = () => {
+
+  const [state, setState] = useState(initState);
+  const [touched, setTouched] = useState(initBools);
+  const {values} = state;
+
+  const onSubmit = (event) => {
+    console.log("WORKING");
+    setState((prev) => ({
+      ...prev,
+    }));
+    // event.preventDefault();
+    
+    sendContactForm(values)
+  }
+
+  const onBlur = ({target}) => setTouched((prev) => ({...prev, [target.name]:true}))
+
+  const handleChange =  ({target}) => setState((prev) => ({
+    ...prev,
+    values: {
+      ...prev.values,
+      [target.name]: target.value,
+    }
+  }))
+ 
+ 
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -59,32 +107,42 @@ const Contact = () => {
               </p>
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="Firstname" />
+                {/* <Input type="firstname" placeholder="Firstname" />
                 <Input type="lastname" placeholder="Lastname" />
                 <Input type="email" placeholder="Email address" />
-                <Input type="phone" placeholder="Phone number" />
+                <Input type="phone" placeholder="Phone number" /> */}
+
+                <FormControl isRequired isInvalid = {touched.firstname && values.firstname == ""}>
+                   {/* <FormLabel>Name</FormLabel> */}
+                   <Input type="firstname" name = "firstname" placeholder="Firstname" values = {values.firstname} onChange = {handleChange} onBlur = {onBlur} />
+                   <FormErrorMessage className = "text-[12px] pl-3 text-red-400">Required</FormErrorMessage>
+               </FormControl>
+               <FormControl isRequired isInvalid = {values.lastname === "" && touched.lastname }>
+                   {/* <FormLabel>Name</FormLabel> */}
+                   <Input type="lastame" name = "lastname" placeholder="Lastname" values = {values.lastname } onChange = {handleChange} onBlur = {onBlur} />
+                   <FormErrorMessage className = "text-[12px] pl-3 text-red-400">Required</FormErrorMessage>
+               </FormControl>
+               <FormControl isRequired isInvalid = {values.email === "" && touched.email}>
+                   {/* <FormLabel>Name</FormLabel> */}
+                   <Input type="email" name = "email" placeholder="Email address" values = {values.email} onChange = {handleChange} onBlur = {onBlur} />
+                   <FormErrorMessage className = "text-[12px] pl-3 text-red-400">Required</FormErrorMessage>
+               </FormControl>
+               <FormControl isRequired isInvalid = {values.subject === "" && touched.subject}>
+                   {/* <FormLabel>Name</FormLabel> */}
+                   <Input type="subject" name = "subject" placeholder="Subject" values = {values.subject} onChange = {handleChange} onBlur = {onBlur} />
+                   <FormErrorMessage className = "text-[12px] pl-3 text-red-400">Required</FormErrorMessage>
+               </FormControl>
+
+
+
               </div>
-              {/* select */}
-              <Select>
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select a service" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="est">Web Development</SelectItem>
-                    <SelectItem value="cst">UI/UX Design</SelectItem>
-                    <SelectItem value="mst">Logo Design</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
+              
+              
               {/* textarea */}
-              <Textarea
-                className="h-[200px]"
-                placeholder="Type your message here."
-              />
+              <Textarea type="message" name = "message" placeholder="Type your Message" values = {values.name} onChange = {handleChange} className = "h-[200px] text-black"/>
+
               {/* btn */}
-              <Button size="md" className="max-w-40">
+              <Button size="md" className="max-w-40" disabled = {(values.firstname === "")|| (values.lastname === "") || (values.email === "") || (values.message === "")|| (values.email === "")} onClick = {onSubmit} >
                 Send message
               </Button>
             </form>
