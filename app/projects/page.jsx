@@ -22,28 +22,40 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
-    category: "frontend",
+    category: "fullstack",
     title: "LazyTrader",
     description:
       "TradingBot/Platform that allows me to backtest certain forex trading strateges. Backtested strategies such as mean reversion, rgression, and classification techniques to optimize trading strategies. Built REST APIs for front-end back-end communication. Automated all trading processes and deployed on AWS EC2 Instance. Utilized Flask server for backend",
     stack: [{ name: "Python(Pandas, Numpy, etc)" }, { name: "Flask" }, { name: "AWS" }],
     image: "/assets/TradingBotPics/tradingPics.png",
     live: "",
-    github: "https://github.com/pranavKomarla",
+    github: "https://github.com/pranavKomarla/lazyTrader",
   },
+  
   {
     num: "02",
-    category: "fullstack",
+    category: "System Design",
+    title: "Linux Shell",
+    description:
+      "Designed and implemented a custom Linux shell, providing interactive and batch modes for executing and managing a sequence of shell commands. Gained expertise in POSIX stream IO, directory management, and advanced process control. Utilized system calls for implementing redirection and piping between processes, enhancing command functionality. Developed features including wildcard pattern matching, input/output redirection, and conditional command execution, ensuring robust and efficient shell operations",
+    stack: [{ name: "C" }],
+    image: "/assets/Linux_shell_pics/Linux_Shell.png",
+    live: "",
+    github: "https://github.com/pranavKomarla/Linux-Shell",
+  },
+  {
+    num: "03",
+    category: "frontend",
     title: "THIS :)",
     description:
       "Simple Portfolio Website utilizing javascript frameworks in order to showcase some ability. Utilized FramerMotion and TailwindCSS. Deployed on Vercel ",
     stack: [{ name: "NextJS" }, { name: "ReactJS" }, { name: "Vercel" }, { name: "TailWindCSS"}],
     image: "/assets/PortfolioPics/homescreen.png",
     live: "",
-    github: "",
+    github: "https://github.com/pranavKomarla/Pranav_Komarla_Portfolio",
   },
   {
-    num: "03",
+    num: "04",
     category: "frontend",
     title: "RU Study",
     description:
@@ -51,20 +63,10 @@ const projects = [
     stack: [{ name: "Next.js" }, { name: "Tailwind.css" }],
     image: "/assets/RUStudy/rutgers.png",
     live: "",
-    github: "",
+    github: "https://github.com/psudheer27/RUHealthy",
   },
   
-  {
-    num: "04",
-    category: "frontend",
-    title: "Linux Shell",
-    description:
-      "Designed and implemented a custom Linux shell, providing interactive and batch modes for executing and managing a sequence of shell commands. Gained expertise in POSIX stream IO, directory management, and advanced process control. Utilized system calls for implementing redirection and piping between processes, enhancing command functionality. Developed features including wildcard pattern matching, input/output redirection, and conditional command execution, ensuring robust and efficient shell operations",
-    stack: [{ name: "C" }],
-    image: "/assets/Linux_shell_pics/Linux_Shell.png",
-    live: "",
-    github: "",
-  },
+  
 ];
 
 const Work = () => {
